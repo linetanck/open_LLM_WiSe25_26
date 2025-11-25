@@ -1,5 +1,6 @@
 # open_LLM_WiSe25_26
 Projekt für das Seminar Open LLMs in der Praxis.
+
 Karoline Tanck 7449219
 
 ## Aufgabenstellung:
