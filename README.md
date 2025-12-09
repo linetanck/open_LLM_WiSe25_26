@@ -13,4 +13,4 @@ https://www.kaggle.com/datasets/mllion/one-direction-all-songs-with-lyrics/data
 https://github.com/adashofdata/taylor_swift_data/blob/main/Taylor_Swift_Words_Data.xlsx
 
 ## Modell:
-tbd.
+[llama 3.2:3b] (https://ollama.com/library/llama3.2:3b) via Ollama 
