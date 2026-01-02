@@ -1,14 +1,33 @@
-# Read the lyrics from a file, remove line breaks, and write to a new file
+import os
+import pandas as pd
 
-# Open and read the original file
-with open("data/lyrics_test.txt", "r", encoding="utf-8") as f:
-    lyrics = f.read()
+dictionary = {}
 
-# Remove line breaks and extra whitespace
-one_line_lyrics = " ".join(lyrics.split())
+directory = "data/Red"
 
-# Write the single-line lyrics to a new file
-with open("data/lyrics_one_line.txt", "w", encoding="utf-8") as f:
-    f.write(one_line_lyrics)
+for filename in os.listdir(directory):
+    if filename.endswith(".txt"):
+        filepath = os.path.join(directory, filename)
+        with open(filepath, "r", encoding="utf-8") as f:
+            content = f.read()
+            key = filename[:-4]
+            content = content.split(sep = "\n")
+            content[-1] = content[-1][:-7]
+            bereinigt = []
+            for j in content:
+                if "]" in j:
+                    pass
+                else:
+                    bereinigt.append(j)
+            bereinigt = " ".join(bereinigt)   
+            dictionary[key]= bereinigt
 
-print("Lyrics have been written to lyrics_one_line.txt as a single line.")
+
+df = pd.DataFrame.from_dict(dictionary, orient="index", columns=["content"])
+df.index.name = "filename"
+
+df["label"] = ""
+
+
+print(df.head())
+
