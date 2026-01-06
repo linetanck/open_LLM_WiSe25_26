@@ -2,8 +2,9 @@
 
 from ollama import chat
 from ollama import ChatResponse
-from daten_verarbeiten import df
 import pandas as pd
+
+df = pd.read_csv('data/annotated_songs.csv')
 
 system_prompt = f'You are a Person with a high school degree and have no previous knowledge of Taylor Swift.'
 

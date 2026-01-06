@@ -60,8 +60,21 @@ df.loc[22, "goal_label"] = "yearning"
 df.loc[23, "goal_label"] = "broken up"
 df.loc[24, "goal_label"] = "forbidden love"
 df.loc[25, "goal_label"] = "broken up" # I forgot that you existed
+df.loc[26, "goal_label"] = "yearning"
+df.loc[27, "goal_label"] = "yearning" # evtl happy
+df.loc[28, "goal_label"] = "happily in love"
+df.loc[29, "goal_label"] = "happily in love"
+df.loc[30, "goal_label"] = "happily in love"
+df.loc[31, "goal_label"] = "happily in love"
+df.loc[32, "goal_label"] = "happily in love" # paper rings
+df.loc[33, "goal_label"] = "unrelated to love"
+df.loc[34, "goal_label"] = "forbidden love"
+df.loc[35, "goal_label"] = "unrelated to love"
+df.loc[36, "goal_label"] = "unrelated to love"
+
+print(df.info())
 
 
+print(df.tail())
 
-#print(df.tail())
-
+df.to_csv("data/annotated_songs.csv", index=False, encoding="utf-8")
