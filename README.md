@@ -7,7 +7,7 @@ _Bild von Paolo Villanueva - Taylor Swift The Eras Tour: Lover Set, CC BY 2.0, h
 ## Aufgabenstellung
 In diesem Projekt sollen open LLMs auf ihre Fähigkeit Texte zu interpretieren, getestet werden. Dabei wird sich fokussiert auf Songtexte eines bestimmten Artist (tbd.) und auf einen Bestimmten Aspekt: die Einstellung von dem lyrischen Ich zu dem lyrischen Du. Es soll um die Art des Liebesliedes gehen.
 
-Dabei bekommt das Modell folgende Promts
+Dabei bekommt das Modell folgende Promts:
 ```
  You are a classifier.
 
@@ -50,7 +50,8 @@ Grundsätzlich lassen sich Ergebnisse dieses Projektes auch auf andere Formen vo
 Bei der Auswahl eines Datensatzes wird darauf geachtet, dass genug Lieder eines Artist im Datensatz sind. Zusätzlich aufgrund der Notwendigkeit einer manuellen Einteilung der Songs in die Kategorien ist es auch wichtig, dass alle Lieder gerne einmal gehört werden. 
 
 Es wurden alle Songs vom Album Red (2012) und Lover (2019) genutzt. Die Songlyrics stammen aus einem Kaggle Datensatz von Ishika Johari  
-https://www.kaggle.com/datasets/ishikajohari/taylor-swift-all-lyrics-30-albums
+https://www.kaggle.com/datasets/ishikajohari/taylor-swift-all-lyrics-30-albums  
+Die Zielkategorien wurden manuell hinzugefügt.
 
 ## Modell
 Für die Bearbeitung des Projekts wurden erste Experimente mit dem Modell [llama3.2:3b](https://ollama.com/library/llama3.2:3b) via Ollama gemacht. In der Entscheidungsfindung welches Modell genutzt wird, wurde neben der Offenheit hauptsächlich auf die Größe des Modells in Relation zur Leistungsfähigkeit geachtet. Das Projekt soll auf einem Laptop mit 8GB Arbeitsspeicher laufen, da dies auch ein zukünftiges Anwendungsszenario sein könnte. Laut Ollama übertrifft llama3.2:3b viele der anderen offenen Modelle und ist besonders gut darin, Zusammenfassungen zu erstellen.
