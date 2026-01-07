@@ -7,34 +7,30 @@ _Bild von Paolo Villanueva - Taylor Swift The Eras Tour: Lover Set, CC BY 2.0, h
 ## Aufgabenstellung
 In diesem Projekt sollen open LLMs auf ihre Fähigkeit Texte zu interpretieren, getestet werden. Dabei wird sich fokussiert auf Songtexte eines bestimmten Artist (tbd.) und auf einen Bestimmten Aspekt: die Einstellung von dem lyrischen Ich zu dem lyrischen Du. Es soll um die Art des Liebesliedes gehen.
 
-Dabei bekommt das Modell folgende Promts:
+Dabei performt das Modell am Besten mit folgendem Promt:
 ```
- You are a classifier.
+You are a strict song lyrics classifier.
 
-            Allowed labels (choose exactly ONE):
-
+            Choose EXACTLY ONE label from this list:
             happily in love
-            - the singer is in a mutual, positive relationship
-
             broken up
-            - the relationship has ended or is ending
-
             yearning
-            - the singer wants someone they are NOT with (distance, unrequited love, waiting)
-
             revenge empowerment
-            - anger, revenge, or self-empowerment after hurt
-
             forbidden love
-            - love that must be hidden or is socially blocked
-
             unrelated to love
-            - love is not the main theme
 
-            Rules:
-            - Output exactly ONE label
-            - No explanation
-            - No punctuation
+            Decision rules (follow in order):
+            1. If the lyrics are NOT mainly about romantic love → unrelated to love
+            2. If they express anger or moving on after being hurt → revenge empowerment
+            3. If a relationship has ended or is ending → broken up
+            4. If the singer wants someone they are NOT with (distance, unrequited, waiting, missing) → yearning
+            5. If the love must be hidden or is socially forbidden → forbidden love
+            6. If the relationship is mutual, happy, and ongoing or the lyrics express being happily in love → happily in love
+
+            First, silently analyze the lyrics.
+            Then output ONLY the label.
+            No explanation. No punctuation.
+
             Lyrics: {lyrics}
 ```
 Die Kategorien, die vergeben werden sind: 
@@ -56,5 +52,8 @@ Die Zielkategorien wurden manuell hinzugefügt.
 ## Modell
 Für die Bearbeitung des Projekts wurden erste Experimente mit dem Modell [llama3.2:3b](https://ollama.com/library/llama3.2:3b) via Ollama gemacht. In der Entscheidungsfindung welches Modell genutzt wird, wurde neben der Offenheit hauptsächlich auf die Größe des Modells in Relation zur Leistungsfähigkeit geachtet. Das Projekt soll auf einem Laptop mit 8GB Arbeitsspeicher laufen, da dies auch ein zukünftiges Anwendungsszenario sein könnte. Laut Ollama übertrifft llama3.2:3b viele der anderen offenen Modelle und ist besonders gut darin, Zusammenfassungen zu erstellen.
 
+## Ergebnisse  
+Das beste Ergebnis des Experiments sind 40,5% Trefferquote. In 15 von 37 Fällen hat das Modell das selbe Label vergeben wie ich in meiner manuellen Klassifizierung. 
 ## Projektverlauf
-### Erste Tests
+### Erste Tests  
+Probleme mit Nutzung aller Labels, Label "longing" zu mehrdeutig.
