@@ -53,7 +53,7 @@ Die Zielkategorien wurden manuell hinzugefügt.
 Für die Bearbeitung des Projekts wurden erste Experimente mit dem Modell [llama3.2:3b](https://ollama.com/library/llama3.2:3b) via Ollama gemacht. In der Entscheidungsfindung welches Modell genutzt wird, wurde neben der Offenheit hauptsächlich auf die Größe des Modells in Relation zur Leistungsfähigkeit geachtet. Das Projekt soll auf einem Laptop mit 8GB Arbeitsspeicher laufen, da dies auch ein zukünftiges Anwendungsszenario sein könnte. Laut Ollama übertrifft llama3.2:3b viele der anderen offenen Modelle und ist besonders gut darin, Zusammenfassungen zu erstellen.
 
 ## Ergebnisse  
-Das beste Ergebnis des Experiments sind 40,5% Trefferquote. In 15 von 37 Fällen hat das Modell das selbe Label vergeben wie ich in meiner manuellen Klassifizierung. 
+Das beste Ergebnis des Experiments sind 43,2% Trefferquote. In 16 von 37 Fällen hat das Modell das selbe Label vergeben wie ich in meiner manuellen Klassifizierung. 
 ## Projektverlauf
 ### Erste Tests  
 Probleme mit Nutzung aller Labels, Label "longing" zu mehrdeutig.
