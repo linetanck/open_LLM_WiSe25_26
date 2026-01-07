@@ -72,9 +72,11 @@ df.loc[34, "goal_label"] = "forbidden love"
 df.loc[35, "goal_label"] = "unrelated to love"
 df.loc[36, "goal_label"] = "unrelated to love"
 
-print(df.info())
+# print(df.info())
+
+# print(df.tail())
+
+print(df["goal_label"].value_counts())
 
 
-print(df.tail())
-
-#df.to_csv("data/annotated_songs.csv", index=False, encoding="utf-8")
+# df.to_csv("data/annotated_songs.csv", index=False, encoding="utf-8")

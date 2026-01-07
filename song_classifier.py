@@ -15,36 +15,32 @@ def classify_lyrics(row):
         messages=[
             {'role': 'system', 'content': system_prompt},
             {'role': 'user', 'content': f"""
-            You are a classifier.
+            You are a strict song lyrics classifier.
 
-            Allowed labels (choose exactly ONE):
-
+            Choose EXACTLY ONE label from this list:
             happily in love
-            - the singer is in a mutual, positive relationship
-
             broken up
-            - the relationship has ended or is ending
-
             yearning
-            - the singer wants someone they are NOT with (distance, unrequited love, waiting)
-
             revenge empowerment
-            - anger, revenge, or self-empowerment after hurt
-
             forbidden love
-            - love that must be hidden or is socially blocked
-
             unrelated to love
-            - love is not the main theme
 
-            Rules:
-            - Output exactly ONE label
-            - No explanation
-            - No punctuation
-            Lyrics: {lyrics}."""},
+            Decision rules (follow in order):
+            1. If the lyrics are NOT mainly about romantic love → unrelated to love
+            2. If they express anger or moving on after being hurt → revenge empowerment
+            3. If a relationship has ended or is ending → broken up
+            4. If the singer wants someone they are NOT with (distance, unrequited, waiting, missing) → yearning
+            5. If the love must be hidden or is socially forbidden → forbidden love
+            6. If the relationship is mutual, happy, and ongoing or the lyrics express being happily in love → happily in love
+
+            First, silently analyze the lyrics.
+            Then output ONLY the label.
+            No explanation. No punctuation.
+                        
+            Lyrics: {lyrics}"""},
         ],
         options={
-        "temperature": 0.2,
+        "temperature": 0.4,
         "num_ctx": 1024,     # limits context window
         "num_predict": 5,    # short output
         },
@@ -80,5 +76,5 @@ filepath_df = "data/classified_songs.csv"
 df.to_csv(filepath_df, index=False, encoding="utf-8")
 
 print(df.head())
-print(df["llm_label"].value_counts()
+print(df["llm_label"].value_counts())
 
