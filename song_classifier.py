@@ -80,4 +80,5 @@ filepath_df = "data/classified_songs.csv"
 df.to_csv(filepath_df, index=False, encoding="utf-8")
 
 print(df.head())
-print(df["llm_label"].value_counts())
+print(df["llm_label"].value_counts()
+

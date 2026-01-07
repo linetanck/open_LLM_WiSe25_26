@@ -77,4 +77,4 @@ print(df.info())
 
 print(df.tail())
 
-df.to_csv("data/annotated_songs.csv", index=False, encoding="utf-8")
+#df.to_csv("data/annotated_songs.csv", index=False, encoding="utf-8")
