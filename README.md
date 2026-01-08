@@ -5,9 +5,18 @@ _Bild von Paolo Villanueva - Taylor Swift The Eras Tour: Lover Set, CC BY 2.0, h
 
 
 ## Aufgabenstellung
-In diesem Projekt sollen open LLMs auf ihre Fähigkeit Texte zu interpretieren, getestet werden. Dabei wird sich fokussiert auf Songtexte eines bestimmten Artist (tbd.) und auf einen Bestimmten Aspekt: die Einstellung von dem lyrischen Ich zu dem lyrischen Du. Es soll um die Art des Liebesliedes gehen.
+In diesem Projekt sollen open LLMs auf ihre Fähigkeit Texte zu interpretieren, getestet werden. Dabei wird sich fokussiert auf Songtexte eines bestimmten Artist (tbd.) und auf einen Bestimmten Aspekt: die Einstellung von dem lyrischen Ich zu dem lyrischen Du. Es geht um die Art des Liebesliedes.  
+Die Kategorien, die vergeben werden sind: 
+* "happily in love",
+* "broken up",
+* "yearning",
+* "revenge empowerment",
+* "forbidden love",
+* "unrelated to love"
 
-Dabei performt das Modell am Besten mit folgendem Promt:
+Beim Prompting wurden sowohl Zero-Shot-Prompting als auch Few-Shot-Prompting ausprobiert. Dabei performt llama 3.2 in diesem Experiment am besten mit Zero-Shot-Prompting.
+
+Dabei performt das Modell in diesem Experiment am Besten mit folgendem Prompt:
 ```
 You are a strict song lyrics classifier.
 
@@ -33,13 +42,6 @@ You are a strict song lyrics classifier.
 
             Lyrics: {lyrics}
 ```
-Die Kategorien, die vergeben werden sind: 
-* "happily in love",
-* "broken up",
-* "yearning",
-* "revenge empowerment",
-* "forbidden love",
-* "unrelated to love"
 
 Grundsätzlich lassen sich Ergebnisse dieses Projektes auch auf andere Formen von Lyrik übertragen, zum Beispiel Gedichte. Sollten das genutzte offene LLM gut performen in diesem Projekt, dann ermöglichen LLMs das schnelle Analysieren solcher kurzen künstlerischen Texte.
 ## Daten:
