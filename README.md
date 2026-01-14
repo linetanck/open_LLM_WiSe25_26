@@ -61,6 +61,9 @@ In der Entscheidungsfindung welches Modell genutzt wird, wurde neben der Offenhe
 Das beste Ergebnis des Experiments sind 43,2% Trefferquote der Zielklasse mit dem oben genannten prompt. In 16 von 37 Fällen hat das Modell das selbe Label vergeben wie die manuelle Klassifizierung.  
 Verteilt man die Klassen beliebig ergibt dies eine Trefferquote von 16-18%.  
 Die Confusion Matrix zeigt, dass die Klasse "happily in love" am besten performt, wobei "revenge empowerment" over-predicted wird und "forbidden love" nie richtig vergeben wurde.  
-### Mögliche Gründe / Verbesserungen
+### Mögliche Gründe / Verbesserungen  
+* Trotz mehrfacher Überarbeitung der Klassen: Klassen nicht eindeutig genug
+* kleines Modell (nur 3B)
+* immer noch wenige Daten
 
 
