@@ -50,13 +50,17 @@ Aufgrund der Notwendigkeit einer manuellen Einteilung der Songs in die Kategorie
 
 Es wurden alle Songs vom Album Red (2012) und Lover (2019) genutzt. Die Wahl fiel auf diese zwei Alben, da dass Album Red eine Trennung und das Album Lover eine glückliche Beziehung behandelt. Somit sollte die Klassenverteilung gleichmäßiger sein. Die Songlyrics stammen aus einem Kaggle Datensatz von Ishika Johari  
 https://www.kaggle.com/datasets/ishikajohari/taylor-swift-all-lyrics-30-albums  
-Die Zielkategorien wurden manuell hinzugefügt. Im manuellen Annotationsprozess wurden, wie auch im Experiement, die gesamten Songtexte gelesen und eine Klasse vergeben. Es wurde immer die Klasse vergeben, welche am besten auf den Liedtext zugetroffen hat.
+Die Zielkategorien wurden manuell hinzugefügt. Im manuellen Annotationsprozess wurden, wie auch im Experiement, die gesamten Songtexte gelesen und eine Klasse vergeben. Es wurde immer die Klasse vergeben, welche am besten auf den Liedtext zugetroffen hat.  
+Für die Datenverarbeitung im Code wurden Pandas DataFrames genutzt.
 
 ## Modell
-Für die Bearbeitung des Projekts wurden erste Experimente mit dem Modell [llama3.2:3b](https://ollama.com/library/llama3.2:3b) via Ollama gemacht. In der Entscheidungsfindung welches Modell genutzt wird, wurde neben der Offenheit hauptsächlich auf die Größe des Modells in Relation zur Leistungsfähigkeit geachtet. Das Projekt soll auf einem Laptop mit 8GB Arbeitsspeicher laufen, da dies auch ein zukünftiges Anwendungsszenario sein könnte. Laut Ollama übertrifft llama3.2:3b viele der anderen offenen Modelle und ist besonders gut darin, Zusammenfassungen zu erstellen.
+Das Projekt wurde mit dem Modell [llama3.2:3b](https://ollama.com/library/llama3.2:3b) via Ollama gemacht.  
+In der Entscheidungsfindung welches Modell genutzt wird, wurde neben der Offenheit hauptsächlich auf die Größe des Modells in Relation zur Leistungsfähigkeit geachtet. Das Projekt soll auf einem Laptop mit geringem Arbeitsspeicher durchführbar sein, da dies auch ein zukünftiges Anwendungsszenario sein könnte. Laut Ollama übertrifft llama3.2:3b viele der anderen offenen Modelle und ist besonders gut darin, Zusammenfassungen zu erstellen.
 
 ## Ergebnisse  
-Das beste Ergebnis des Experiments sind 43,2% Trefferquote. In 16 von 37 Fällen hat das Modell das selbe Label vergeben wie ich in meiner manuellen Klassifizierung. 
-## Projektverlauf
-### Erste Tests  
-Probleme mit Nutzung aller Labels, Label "longing" zu mehrdeutig.
+Das beste Ergebnis des Experiments sind 43,2% Trefferquote der Zielklasse mit dem oben genannten prompt. In 16 von 37 Fällen hat das Modell das selbe Label vergeben wie die manuelle Klassifizierung.  
+Verteilt man die Klassen beliebig ergibt dies eine Trefferquote von 16-18%.  
+Die Confusion Matrix zeigt, dass die Klasse "happily in love" am besten performt, wobei "revenge empowerment" over-predicted wird und "forbidden love" nie richtig vergeben wurde.  
+### Mögliche Gründe / Verbesserungen
+
+
