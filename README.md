@@ -63,7 +63,14 @@ Verteilt man die Klassen beliebig ergibt dies eine Trefferquote von 16-18%.
 Die Confusion Matrix zeigt, dass die Klasse "happily in love" am besten performt, wobei "revenge empowerment" over-predicted wird und "forbidden love" nie richtig vergeben wurde.  
 ### Mögliche Gründe / Verbesserungen  
 * Trotz mehrfacher Überarbeitung der Klassen: Klassen nicht eindeutig genug
+* Mogliche Lösung: Binäre Vergebung der Klassen (z.B.: Geht es um Liebe y/n?)
 * kleines Modell (nur 3B)
 * immer noch wenige Daten
 
-
+## Dateien  
+<b>daten_verarbeiten.py:</b> Datenbereinigung, Erstellung des DataFrames, manuelle Annotation; gibt csv Datei aus, die unter data/annotated_songs.csv zu finden ist.
+<b>song_classifier.py:</b> LLM vergibt Klassen, gibt csv Datei aus, die unter data/classified_songs.csv zu finden ist.
+<b>evaluate.py:</b> Errechnet Übereinstimmung von den Columns "goal_label" und "llm_label", gibt Anzahl an Richtigen aus, Prozent der Richtigkeit und Confusion Matrix.
+<b>random_label.py:</b> Vergibt zufällige Klassen und errechnet Durchschnitt von der Richtigkeit 
+data: beinhaltet Songtexte als .txt Dateien, Datensatz: annotated_songs.csv, Klassifizierte Songs: classified_songs.csv
+Versionverlauf: Code mit ersten Versuchen
