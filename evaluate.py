@@ -27,7 +27,6 @@ y_pred = df["llm_label"]
 labels = sorted(df["goal_label"].unique())
 
 cm = confusion_matrix(y_true, y_pred, labels=labels)
-print(cm)
 
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=labels)
 disp.plot(cmap="Blues", xticks_rotation=45)
